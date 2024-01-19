@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Square Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+  </style>
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <style>
+    .header {
+      margin-top: 5vh;
+    }
+
+    .card-header {
+      font-size: 1.8rem;
+      font-weight: 600;
+      /* background-color:#2b8e00!important; */
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 500;
+
+    }
+
+    span {
+      font-size: 2rem;
+      color: #4d9d01 !important;
+      text-align: center;
+    }
+
+    .card-footer {
+      text-align: center;
+      font-weight: bold;
+
+    }
+
+    .bi {
+      color: rgb(243, 61, 61) !important;
+    }
+
+    body {
+      /* background-color: rgb(18, 110, 109); */
+
+    }
+
+    .card {
+      width: 90vw;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 10vh;
+    }
+
+    .screen {
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-align: justify;
+      margin-bottom: 10px;
+    }
+
+    .headingtxt {
+      color: black;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .red{
+      color:rgb(238, 54, 54);
+    }
+  </style>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="header d-flex justify-content-center align-content-center">
+
+    <div class="card border-all text-white">
+      <div class="card-header text-center bg-info text-white ">
+        Divisibility Calculator
+      </div>
+      <div class="card-body  ">
+        <form class="form-inline d-flex justify-content-center flex-wrap " id="formid">
+          <div class="from-group  mr-2 ml-2 my-2">
+
+            <!-- input field -->
+            <input type="number" id="inp" class="form-control text-center " placeholder="Enter Number">
+          </div>
+        </form>
+        <div class="headingtxt"> Check Divisiblity </div>
+        <br>
+        <div class="d-flex justify-content-center flex-wrap">
+
+          <!-- Divisibliby 2 -->
+          <button class="btn btn-outline-primary ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy2()">By 2</button>
+
+          <!-- Divisibliby 3 -->
+          <button class="btn btn-outline-success ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy3()">By 3</button>
+
+          <!-- Divisibliby 4 -->
+          <button class="btn btn-outline-primary ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy4()">By 4</button>
+
+          <!-- Divisibliby 5 -->
+          <button class="btn btn-outline-warning ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy5()">By 5</button>
+
+          <!-- Divisibliby 6 -->
+          <button class="btn btn-outline-success ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy6()">By 6</button>
+
+          <!-- Divisibliby 7 -->
+          <button class="btn btn-outline-secondary ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy7()">By 7</button>
+
+          <!-- Divisibliby 8 -->
+          <button class="btn btn-outline-primary ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy8()">By 8</button>
+
+          <!-- Divisibliby 9 -->
+          <button class="btn btn-outline-success ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy9()">By 9</button>
+
+          <!-- Divisibliby 10 -->
+          <button class="btn btn-outline-warning ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy10()">By 10</button>
+
+          <!-- Divisibliby 11 -->
+          <button class="btn btn-outline-info ml-2 mr-2 pr-2 pl-2 my-2  " id="calcbtn" onclick="divBy11()">By 11</button>
+
+          <!-- Clear button -->
+          <button class="btn btn-danger ml-2 mr-2 my-2 pl-3 pr-3 " id="clear" onclick=clearbtn()>Reload</button>
+        </div>
+      </div>
+      <br>
+
+      <!-- Display Results -->
+      <div class="screen w-45 m-auto text-center ">
+        <div id="screen1" class="text-primary h2 font-weight-bold"></div>
+
+        <div id="screen2" class="text-secondary "></div>
+
+      </div>
+
+      <div class="card-footer text-body-secondary text-secondary mt-4">
+        Created by <i class="bi bi-heart-fill"></i> Dipesh
+      </div>
+    </div>
+
+  </div>
+  <!-- Divisiblity Script -->
+  <script src="script.js"></script>
+
+  <!-- outsourcing scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
